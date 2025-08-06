@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umair Nadeem | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+      scroll-behavior: smooth;
+      animation: fadeIn 1s ease-in;
+      transition: background 0.5s, color 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      margin: 1rem 0 0;
+      font-size: 1.3rem;
+      color: #00bcd4;
+    }
+    nav {
+      background: #ffffff;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #141e30;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    .section {
+      padding: 4rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #141e30;
+      text-align: center;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00bcd4;
+      margin: 10px auto 0;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: #00bcd4;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 0.7rem 1.2rem;
+      background: #141e30;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .contact a:hover {
+      background: #00bcd4;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #141e30;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Umair Nadeem</h1>
+    <p>Python Programmer | Vivado SystemVerilog Specialist</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section about" id="about">
+    <h2>About Me</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">I'm an Electrical Engineering student with specialized skills in Python, FPGA development (Vivado + SystemVerilog), and professional circuit design using Altium and Multisim. I am passionate about creating automated systems, optimizing hardware logic, and delivering efficient solutions for real-world tech challenges.</p>
+  </section>
+
+  <section class="section skills" id="skills">
+    <h2>Skills</h2>
+    <div class="card">Python Programming</div>
+    <div class="card">SystemVerilog (Vivado)</div>
+    <div class="card">Altium Designer</div>
+    <div class="card">Multisim</div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>FPGA Counter</h3>
+      <p>Designed a real-time 7-segment display counter using SystemVerilog and deployed on FPGA with Vivado. Optimized for low-latency switching and high timing precision.</p>
+    </div>
+    <div class="card">
+      <h3>PCB Power Supply Design</h3>
+      <p>Created a dual-output power supply (5V/12V) PCB using Altium Designer with professional layout practices and component footprints for accurate simulation.</p>
+    </div>
+    <div class="card">
+      <h3>Python Automation Script</h3>
+      <p>Built a Python automation tool to organize research data, perform bulk file operations, and generate summary logs for lab experiments.</p>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>Contact</h2>
+    <a href="mailto:nadeemumair216@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/umair-nadem" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Umairndm" target="_blank">GitHub</a>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Umair Nadeem. All rights reserved.
+  </footer>
+</body>
+</html>
